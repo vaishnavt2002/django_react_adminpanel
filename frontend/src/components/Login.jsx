@@ -53,8 +53,13 @@ const Login = () => {
         </button>
       </form>
       {error && (
-        <p className="text-red-500 mt-2">{JSON.stringify(error)}</p>
-      )}
+       <div className="text-red-500 mt-2">
+      {Object.entries(error).map(([key, value]) => (
+        <p key={key}>
+          <strong>{key}:</strong> {value}
+        </p>
+      ))}
+    </div>)}
     </div>
   );
 };

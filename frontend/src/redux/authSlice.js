@@ -18,8 +18,6 @@ export const login = createAsyncThunk('auth/login', async (credentials, { reject
       headers: { Authorization: `Bearer ${token}` },
     });
     const user = userResponse.data;
-
-    // Store token and user in localStorage
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(user));
 
